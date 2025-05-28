@@ -112,6 +112,7 @@ main article{
 
 .animal-card-photo{
     min-width: 200px;
+    flex-basis: 200px;
     overflow: hidden;
 }
 
