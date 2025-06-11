@@ -7,7 +7,6 @@ async function getPetsData() {
 }
 
 
-let shawn_specie = `All`
 
 
 async function displayPets() {
@@ -46,24 +45,49 @@ async function displayPets() {
         petage.textContent = pet_age
 
         const petspecie = clone.querySelector("#animal-specie")
-        petspecie.textContent = pet.species
+        const firstletter = pet.species.charAt(0)
+        const firstLetterCap = firstletter.toUpperCase()
+        const remainingLetters = pet.species.slice(1)
+        const capitalizedWord = firstLetterCap + remainingLetters
+        petspecie.textContent = capitalizedWord
 
         const petdescription = clone.querySelector(".animal-card-text p")
         petdescription.textContent = pet.description
+
+        const buttonname = clone.querySelector("#button")
+        adopttext = `Adopt ${pet.name}`
+        buttonname.textContent = adopttext;
+
         //aggiungiamo l'articolo alla pagina
         wrapper.appendChild(clone)
-        return pet.species
     })
 
 }
 
 
-pet_specie = displayPets()
-console.log(pet_specie)
-function only_dogs(){
-    if (pet_specie==`dog`){
-        displayPets()
-    }
-}
+
 
 displayPets()
+
+function displayFilteredAnimals(e){
+    console.log(e.target.dataset.filter);
+    let article = document.querySelector(".article")
+    article.forEach(a => {
+        if (a.species == e.target.dataset.filter){
+            article.style.display = "flex"
+        }
+        else {
+             article.style.display = "none"
+        }
+    })
+
+};
+const filterbuttons = document.querySelectorAll("nav button");
+
+filterbuttons.forEach(button => {
+    button.addEventListener("click",(e) => {
+        displayFilteredAnimals(e)
+        
+    })
+})
+console.log(filterbuttons)

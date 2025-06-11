@@ -15,15 +15,15 @@
         <h2> Our pets need a home!</h2>
     </header>
     <nav>
-        <button>Show all</button>
-        <button  onclick="only_dogs()">Only Dogs</button>
-        <button>Only Cats</button>
-        <button>Only Rabbits</button>
+        <button data-filter="all">Show all</button>
+        <button data-filter="dog">Only Dogs</button>
+        <button data-filter="cat">Only Cats</button>
+        <button data-filter="rabbit">Only Rabbits</button>
     </nav>
 
     <main>
         <template id= "animal-card-template">
-        <article>
+        <article class = "article">
             <section class="animal-card-text">
                 <h1>Nome animale</h1>
                 <small>
@@ -33,7 +33,7 @@
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptas numquam quaerat aliquid possimus optio dolorem nihil quia accusamus, nemo molestias doloremque quos ea vel quis praesentium consequatur, delectus fugit.
                 </p>
-                <a href="https://github.com/" target="_blank" class="adopt-button">Adopt me</a>
+                <a id="button" href="https://github.com/" target="_blank" class="adopt-button">Adopt me</a>
             </section>
                 
             <section class="animal-card-photo">
