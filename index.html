@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Test</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="styles.css" rel = "stylesheet">
+    <link href="button_style.css" rel="buttons">
+    <script src="main.js" defer></script>
 </head>
 <body>
+    <header> 
+        <h1> Welcome</h1>
+        <h2> Our pets need a home!</h2>
+    </header>
+    <nav>
+        <button data-filter="all">Show all</button>
+        <button data-filter="dog">Only Dogs</button>
+        <button data-filter="cat">Only Cats</button>
+        <button data-filter="rabbit">Only Rabbits</button>
+    </nav>
+
+    <main>
+        <template id= "animal-card-template">
+        <article class = "article">
+            <section class="animal-card-text">
+                <h1>Nome animale</h1>
+                <small>
+                    <span id="animal-age">2 years old</span> -
+                    <span id="animal-specie">cat</span>
+                </small>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptas numquam quaerat aliquid possimus optio dolorem nihil quia accusamus, nemo molestias doloremque quos ea vel quis praesentium consequatur, delectus fugit.
+                </p>
+                <a id="button" href="https://github.com/" target="_blank" class="adopt-button">Adopt me</a>
+            </section>
+                
+            <section class="animal-card-photo">
+                <img src="static/dog2.webp">
+            </section>
+
+        </article>
+        </template>
+    </main>
 </body>
 </html>
