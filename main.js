@@ -40,11 +40,11 @@ async function displayPets() {
         const petname = clone.querySelector(".animal-card-text h1")
         petname.textContent = pet.name
         
-        const petage = clone.querySelector("#animal-age")
+        const petage = clone.querySelector(".animal-age")
         const pet_age = calc_age()
         petage.textContent = pet_age
 
-        const petspecie = clone.querySelector("#animal-specie")
+        const petspecie = clone.querySelector(".animal-specie")
         const firstletter = pet.species.charAt(0)
         const firstLetterCap = firstletter.toUpperCase()
         const remainingLetters = pet.species.slice(1)
@@ -71,15 +71,22 @@ displayPets()
 
 function displayFilteredAnimals(e){
     console.log(e.target.dataset.filter);
-    let article = document.querySelector(".article")
-    article.forEach(a => {
-        if (a.species == e.target.dataset.filter){
-            article.style.display = "flex"
+    selected = e.target.dataset.filter
+    let articles = document.querySelectorAll(".article")
+    articles.forEach(a => {
+        console.log(a)
+        console.log(a.querySelector(".animal-specie"))
+        if (selected == "all"){
+            a.style.display = "flex"
+        }
+        else if (a.querySelector(".animal-specie").innerText.toLowerCase() == selected){
+            
+            a.style.display = "flex"
         }
         else {
-             article.style.display = "none"
+             a.style.display = "none"
         }
-    })
+     })
 
 };
 const filterbuttons = document.querySelectorAll("nav button");

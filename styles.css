@@ -16,6 +16,22 @@ header {
     position: relative;
     padding: 20px 20px;
 }
+.loading-text {
+	place-self: center;
+	background: linear-gradient(90deg, rgb(224, 35, 168), rgb(237, 253, 253), rgb(218, 36, 142)) -100%/ 200%;
+	/* being excessively careful with compat, 
+	 * though this has been supported unprefixed and 
+	 * in the shorthand across major browsers for a while */
+	-webkit-background-clip: text;
+	        background-clip: text;
+	/* use color, don't use -webkit-text-fill-color anymore, 
+	 * was meant to solve a problem we haven't had in years */
+	color: transparent;
+	font: 900 clamp(2em, 10vw, 10em) exo, sans-serif;
+	animation: shimmer 2s linear infinite
+}
+
+@keyframes shimmer { to { background-position: 100% } }
 
 header h1 {
     margin: 0;
